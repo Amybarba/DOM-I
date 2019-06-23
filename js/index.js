@@ -56,7 +56,7 @@ link.style.fontSize = '20px';
  let makeNewLink = (name) => {
    let addNavLink= document.createElement('a');
    addNavLink.textContent = name;
-   addNavLink.style.color = 'darkgreen';
+   addNavLink.style.color = 'purple';
    addNavLink.style.fontSize = '20px';
    return addNavLink;
  }
