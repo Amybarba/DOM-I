@@ -38,8 +38,12 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+const logo = document.getElementById("logo-img");
+logo.src = (siteContent["nav"]["img-src"]);
+
+// const midImage = document.getElementById('middle-img');
+// midImage = (siteContent['main-content']['middle-img-src']);
+// midImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
 let navigationLinks = document.querySelectorAll("nav a");
 navigationLinks.forEach(( link, item) => {
@@ -51,11 +55,37 @@ link.style.fontSize = '20px';
  navigationLinks = document.getElementsByTagName('nav')[0];
  let makeNewLink = (name) => {
    let addNavLink= document.createElement('a');
-   addNavLink.innerHTML = name;
+   addNavLink.textContent = name;
    addNavLink.style.color = 'darkgreen';
    addNavLink.style.fontSize = '20px';
    return addNavLink;
  }
+ const newHeader = document.querySelector('h1');
+ newHeader.textContent = siteContent.cta.h1;
+
+const newButton = document.querySelector('button');
+newButton.textContent = siteContent.cta.button;
+
+ const ctaImage = document.getElementById('cta-img');
+ ctaImage.src = (siteContent["cta"]["img-src"]);
+
+let newMainContent = document.querySelectorAll('.text-content');
+
+newMainContent[0].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['features-h4'];
+newMainContent[0].getElementsByTagName('p')[0].textContent = siteContent['main-content']['features-content'];
+newMainContent[1].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['about-h4'];
+newMainContent[1].getElementsByTagName('p')[0].textContent = siteContent['main-content']['about-content'];
+newMainContent[2].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['services-h4'];
+newMainContent[2].getElementsByTagName('p')[0].textContent = siteContent['main-content']['services-content'];
+newMainContent[3].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['product-h4'];
+newMainContent[3].getElementsByTagName('p')[0].textContent = siteContent['main-content']['product-content'];
+newMainContent[4].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['vision-h4'];
+newMainContent[4].getElementsByTagName('p')[0].textContent = siteContent['main-content']['vision-content'];
+
+let midImage = document.getElementById('middle-img')
+midImage.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+
 
  navigationLinks.prepend(makeNewLink('Connect'));
  navigationLinks.append(makeNewLink('Survey'));
