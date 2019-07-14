@@ -8,9 +8,9 @@ const siteContent = {
     "nav-item-6": "Contact",
     "img-src": "img/logo.png"
   },
-  "cta": {
-    "h1": "DOM Is Awesome",
-    "button": "Get Started",
+  cta: {
+    h1: "DOM Is Awesome",
+    button: "Get Started",
     "img-src": "img/header-img.png"
   },
   "main-content": {
@@ -40,7 +40,7 @@ const siteContent = {
 //Assignment//
 
 const logo = document.getElementById("logo-img");
-logo.src = (siteContent["nav"]["img-src"]);
+logo.setAttribute ("src", siteContent["nav"]["img-src"]);
 
 const middleImage = document.getElementById("middle-img")
 middleImage.src = (siteContent["main-content"]["middle-img-src"]);
