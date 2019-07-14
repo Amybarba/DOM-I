@@ -46,7 +46,7 @@ const middleImage = document.getElementById("middle-img")
 middleImage.src = (siteContent["main-content"]["middle-img-src"]);
 
 
-let navigationLinks = document.querySelectorAll("nav a");
+let navigationLinks =   document.querySelectorAll("nav a");
 navigationLinks.forEach(( link, item) => {
 link.textContent = siteContent.nav[`nav-item-${item + 1}`];
 
