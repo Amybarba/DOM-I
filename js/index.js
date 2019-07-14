@@ -37,29 +37,33 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+//Assignment//
+
 const logo = document.getElementById("logo-img");
 logo.src = (siteContent["nav"]["img-src"]);
 
-// const midImage = document.getElementById('middle-img');
-// midImage = (siteContent['main-content']['middle-img-src']);
-// midImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+const middleImage = document.getElementById("middle-img")
+middleImage.src = (siteContent["main-content"]["middle-img-src"]);
+
 
 let navigationLinks = document.querySelectorAll("nav a");
 navigationLinks.forEach(( link, item) => {
 link.textContent = siteContent.nav[`nav-item-${item + 1}`];
-link.style.color = 'darkgreen';
-link.style.fontSize = '20px';
+
+
+link.style.color = 'lime';
+link.style.fontSize = '15px';
  });
 
  navigationLinks = document.getElementsByTagName('nav')[0];
  let makeNewLink = (name) => {
    let addNavLink= document.createElement('a');
    addNavLink.textContent = name;
-   addNavLink.style.color = 'purple';
+   addNavLink.style.color = 'fuchsia';
    addNavLink.style.fontSize = '20px';
    return addNavLink;
  }
+
  const newHeader = document.querySelector('h1');
  newHeader.textContent = siteContent.cta.h1;
 
@@ -82,21 +86,16 @@ newMainContent[3].getElementsByTagName('p')[0].textContent = siteContent['main-c
 newMainContent[4].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['vision-h4'];
 newMainContent[4].getElementsByTagName('p')[0].textContent = siteContent['main-content']['vision-content'];
 
-let midImage = document.getElementById('middle-img')
-midImage.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
-
+let replaceContact = document.querySelectorAll('.contact');
+replaceContact[0].getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4'];
+replaceContact[0].getElementsByTagName('p')[0].textContent = siteContent['contact']['address'];
+replaceContact[0].getElementsByTagName('p')[1].textContent = siteContent['contact']['phone'];
+replaceContact[0].getElementsByTagName('p')[2].textContent = siteContent['contact']['email'];
 
  navigationLinks.prepend(makeNewLink('Connect'));
  navigationLinks.append(makeNewLink('Survey'));
 
-// navigationLinks = document.getElementsByTagName('nav')[0];
-//  let makeNewLink = (name) => {
-//    let addNav = document.createElement('a');
-//    addNav.textContent = name;
-//    addNav.style.color = 'green';
-//    return addNav;
-//  }
+ const replaceFooter = document.querySelector('footer');
+replaceFooter.textContent = siteContent.footer.copyright;
 
-//  navigationLinks.prepend(makeNewLink('In Front'));
-//  navigationLinks.append(makeNewLink('Behind'));
